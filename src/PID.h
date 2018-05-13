@@ -1,6 +1,6 @@
 #ifndef PID_H
 #define PID_H
-
+#include<ctime>
 class PID {
 public:
   /*
@@ -16,7 +16,9 @@ public:
   double Kp;
   double Ki;
   double Kd;
-
+  double prev_cte;
+  double int_cte;
+  
   /*
   * Constructor
   */
@@ -41,6 +43,9 @@ public:
   * Calculate the total PID error.
   */
   double TotalError();
+
+  
+  
 };
 
 #endif /* PID_H */
